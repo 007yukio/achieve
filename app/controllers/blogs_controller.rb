@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     @blogs = Blog.all
   end
@@ -18,6 +18,7 @@ class BlogsController < ApplicationController
     @blog.user_id = current_user.id
     if @blog.save
       redirect_to blogs_path, notice: "ブログを作成しました！"
+      NoticeMailer.sendmail_blog(@blog).deliver
     else
       render 'new'
     end
@@ -47,7 +48,7 @@ class BlogsController < ApplicationController
     def blogs_params
       params.require(:blog).permit(:title, :content)
     end
-    
+
     def set_blog
       @blog = Blog.find(params[:id])
     end
