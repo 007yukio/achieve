@@ -47,12 +47,13 @@ group :development, :test do
 
   gem 'rails_12factor', group: :production
 
-  gem 'devise'
-
   gem 'faker'
 
 group :development do
   gem 'letter_opener_web'
+
+  gem 'devise'
+
 end
 
 end
