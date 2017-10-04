@@ -49,9 +49,8 @@ group :development, :test do
   gem 'cancan'
   gem 'pry-rails'
   gem 'better_errors'
+end
 
 group :development do
   gem 'letter_opener_web'
-end
-
 end
