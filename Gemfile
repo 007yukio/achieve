@@ -47,7 +47,8 @@ group :development, :test do
   gem 'faker'
   gem 'rails_admin'
   gem 'cancan'
-
+  gem 'pry-rails'
+  gem 'better_errors'
 end
 
 group :development do
