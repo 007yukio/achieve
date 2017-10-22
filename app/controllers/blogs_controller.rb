@@ -3,7 +3,7 @@ class BlogsController < ApplicationController
 
   def index
     @blogs = Blog.all
-    binding.pry
+    render json: @blogs
   end
 
   def new
